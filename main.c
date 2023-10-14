@@ -42,6 +42,13 @@ static void play_sin_wave(float amplitude, Halfstep hs, uint32_t halfsecs)
     }
 }
 
+float dBFS(float x, float x_max);
+
+float dBFS(float x, float x_max)
+{
+    return 20 * SDL_logf(x / x_max);
+}
+
 /*****************************************************************************/
 
 const Halfstep Scale_major[] = { 0, 2, 4, 5, 7, 9, 11 };
